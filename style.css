@@ -9,6 +9,18 @@
     margin: auto;
 }
 
+h1 {
+    font-family: sans-serif;
+    color: palevioletred;
+}
+
+li {
+    font-family: sans-serif;
+    font-size: large;
+    margin: 10px;
+    text-decoration: none;
+}
+
 .modal {
     display: none;
     /* Hidden by default */
