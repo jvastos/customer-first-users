@@ -15,9 +15,12 @@ setTimeout(() => {
     console.log(allUsersdata);
     allUsersdata.map(i => document.getElementById("usersList").innerHTML += 
                         `
-                        <a href="#" onclick="userModal(this.userid)" userid=${i.id}>
-                            <li>${i.first_name + " " + i.last_name}</li>
-                        </a>
+                            <li onclick="userModal(${i.id})">
+                            <a href="#" >
+                            ${i.first_name + " " + i.last_name}
+                            </a>
+                            </li>
+                        
                         `
                     );
 }, 1000);
@@ -35,7 +38,9 @@ let span = document.getElementsByClassName("close")[0];
 
 function userModal(id) {
     modal.style.display = "block";
-    document.getElementById("user-name").innerHTML = `${id}`
+    document.getElementById("user-image").src = allUsersdata[id-1].avatar;
+    document.getElementById("user-name").innerHTML = "Name: " + allUsersdata[id-1].first_name + " " + allUsersdata[id-1].last_name;
+    document.getElementById("user-email").innerHTML = "Email: " + allUsersdata[id-1].email;
 }
 
 // When the user clicks on <span> (x), close the modal
